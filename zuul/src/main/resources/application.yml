@@ -1,0 +1,15 @@
+server:
+  port: 9000 # 端口
+spring:
+  application:
+    name: zuul-server # 应用名称
+# 路由规则
+zuul:
+  routes:
+    product-service:    # 路由 id 自定义
+      path: /user-service/**     # 配置请求 url 的映射路径
+      serviceId: userservice
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
